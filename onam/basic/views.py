@@ -7,11 +7,20 @@ from basic.models import Country, City
 import json
 
 
-def index(request,alphabet):
+def index(request):
+    #data = Country.objects.all()
+    #countries = Country.objects.all()
+    #countries_list = list(countries)
+    countries_list = Country.objects.all().values_list('name', flat=True).order_by('name')
+    list = "[["
+    for item in countries_list:
+        list = list + '"' + item + '",' 
+    list = list + "]"
+    list = [["Andorra","United Arab Emirates"]]
     #data = serializers.serialize("json", Country.objects.filter(name__startswith=alphabet))
     #return HttpResponse(data)
-    data = serializers.serialize("json", City.objects.all())
-    return HttpResponse(data)
+    #data = serializers.serialize("json", Country.objects.all())
+    return HttpResponse(list)
     #return HttpResponse(json.dumps(data), content_type="application/json")
 
     

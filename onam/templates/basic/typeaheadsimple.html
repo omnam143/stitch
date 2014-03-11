@@ -193,7 +193,7 @@ var countries = new Bloodhound({
   queryTokenizer: Bloodhound.tokenizers.whitespace,
   limit: 10,
   prefetch: {
-    url: '/countries.json',
+    url: 'http://127.0.0.1:8000/basic',
     filter: function(list) {
       return $.map(list, function(country) { return { name: country }; });
     }
