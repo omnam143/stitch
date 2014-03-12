@@ -182,10 +182,8 @@ p {
 </style>
 </head>
 <body>
-  <div id="bloodhound">
-    <input class="typeahead" type="text" placeholder="Countries"/>
-  </div>
- 
+  
+<input class="typeahead" type="text" placeholder="Countries"/>
 <input type="hidden" id="client-id" name="client-id">
 <script>
 // instantiate the bloodhound suggestion engine
@@ -203,7 +201,7 @@ var countries = new Bloodhound({
  
 countries.initialize();
 
-$('#bloodhound .typeahead').typeahead({
+$('.typeahead').typeahead({
   hint: true,
   highlight: true,
   minLength: 1
