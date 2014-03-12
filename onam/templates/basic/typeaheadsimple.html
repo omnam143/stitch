@@ -182,8 +182,9 @@ p {
 </style>
 </head>
 <body>
-
-  <input class="typeahead" type="text" placeholder="Countries"/>
+  <div id="bloodhound">
+    <input class="typeahead" type="text" placeholder="Countries"/>
+  </div>
  
 <input type="hidden" id="client-id" name="client-id">
 <script>
@@ -201,10 +202,18 @@ var countries = new Bloodhound({
 });
  
 countries.initialize();
- 
-$('.typeahead').typeahead(null, {
+
+$('#bloodhound .typeahead').typeahead({
+  hint: true,
+  highlight: true,
+  minLength: 1
+},
+{
   name: 'countries',
   displayKey: 'name',
+  // `ttAdapter` wraps the suggestion engine in an adapter that
+  // is compatible with the typeahead jQuery plugin
   source: countries.ttAdapter()
 });
+
 </script>
