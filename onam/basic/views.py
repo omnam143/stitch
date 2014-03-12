@@ -4,10 +4,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.core import serializers
 from basic.models import Country, City
+from django.utils import simplejson
+
 import json
 
 
-def index(request):
+def indexOLD(request):
     #data = Country.objects.all()
     #countries = Country.objects.all()
     #countries_list = list(countries)
@@ -22,6 +24,13 @@ def index(request):
     #data = serializers.serialize("json", Country.objects.all())
     return HttpResponse(list)
     #return HttpResponse(json.dumps(data), content_type="application/json")
+
+def index(request):
+    data = Country.objects.values_list('name', flat=True).order_by('name')
+    return HttpResponse(
+        simplejson.dumps(list(data)),
+        content_type = 'application/javascript'
+    )
 
     
 def ind(request):
