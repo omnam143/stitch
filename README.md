@@ -1,5 +1,11 @@
 #Open-Health Webapp
 
+
+## Branches
+* *herokudev* - Heroku development branch
+* *master* - Local development branch
+* *production* - Stuff working and tested- Soon
+ 
 ## Heroku link
 * Go to http://openhealth.herokuapp.com/
 
