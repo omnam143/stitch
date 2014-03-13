@@ -182,7 +182,7 @@ p {
 </style>
 </head>
 <body>
-  
+
 <input class="typeahead" type="text" placeholder="Countries"/>
 <input type="hidden" id="client-id" name="client-id">
 <script>
@@ -192,7 +192,7 @@ var countries = new Bloodhound({
   queryTokenizer: Bloodhound.tokenizers.whitespace,
   limit: 10,
   prefetch: {
-    url: 'http://127.0.0.1:8000/basic',
+    url: 'http://openhealth.herokuapp.com/basic',
     filter: function(list) {
       return $.map(list, function(country) { return { name: country }; });
     }
