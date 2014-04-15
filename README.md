@@ -18,6 +18,6 @@
 5. python manage.py sql basic
 6. python manage.py syncdb
 7. python manage.py runserver
-8. 127.0.0.1:8000/admin/ - admin page - username - openhealth - password
+8. 127.0.0.1:8000/admin/ - admin page - username - openhealth - passwordd
 
 ======
